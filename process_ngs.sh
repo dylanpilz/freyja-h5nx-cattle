@@ -1,6 +1,6 @@
 set -ex
 
-accessions=(SRR29324548 SRR29324549) #SRR29324550 SRR29324551)
+accessions=(SRR29324548 SRR29324549 SRR29324550 SRR29324551)
 
 for acc in ${accessions[@]}; do
     # minimap2 -ax sr data/AF144305.1.fasta fastq/${acc}.fastq | samtools view -bS - > bam/${acc}.bam
@@ -14,5 +14,5 @@ for acc in ${accessions[@]}; do
     freyja demix variants/${acc}.variants.tsv variants/${acc}.depths.tsv --output demix/${acc}.demix.tsv --barcodes cattle_barcode.csv #--lineageyml data/cattle_lineages.yml --depthcutoff 10
 done
 
-freyja aggregate demix/ --output demix/aggregate.tsv
-freyja plot demix/aggregate.tsv --output demix/plot.pdf --lineages
+freyja aggregate demix/ --output results/aggregate.tsv
+freyja plot results/aggregate.tsv --output results/plot.pdf --lineages

@@ -18,7 +18,7 @@ new_lineages = {
     'A.1.3': cattle_root + ['T1338A', 'T1732C'],
     'A.1.4': cattle_root + ['T1338A', 'G921A', 'G1374A'],
     'A.1.5': cattle_root + ['T1338A', 'G1071A'],
-    #'A.1.6': cattle_root + ['T1338A', 'A448G']
+    #'A.1.6': cattle_root + ['T1338A', 'A448G'] Omitted for now because of spurious detection in samples with low coverage at 448
 } 
 
 template = barcodes[barcodes['Unnamed: 0'] == 'H5Nx-2.3.4.4b']
