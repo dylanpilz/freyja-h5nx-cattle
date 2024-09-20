@@ -1,0 +1,33 @@
+- name: A
+  alias: A
+  children:
+    - A.1
+- name: A.1
+  alias: A.1
+  children:
+    - A.1.1
+    - A.1.2
+    - A.1.3
+    - A.1.4
+    - A.1.5
+    - A.1.6
+  parent: A
+- name: A.1.1
+  alias: A.1.1
+  parent: A.1
+- name: A.1.2
+  alias: A.1.2
+  parent: A.1
+- name: A.1.3
+  alias: A.1.3
+  parent: A.1
+- name: A.1.4
+  alias: A.1.4
+  parent: A.1
+- name: A.1.5
+  alias: A.1.5
+  parent: A.1
+- name: A.1.6
+  alias: A.1.6
+  parent: A.1
+
