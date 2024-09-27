@@ -7,7 +7,6 @@ cattle_muts = pd.read_csv('data/cattle_base.tsv', sep='\t', header=None, index_c
 cattle_root = cattle_muts.loc['nuc_changes'].values[0].split(', ')
 cattle_reversions = cattle_muts.loc['nuc_reversionsToRoot'].values[0].split(', ')
 
-print(cattle_root)
 cattle_reversions = [int(mutation[1:-1]) for mutation in cattle_reversions]
 
 # New lineages:
@@ -15,11 +14,14 @@ new_lineages = {
     'A': cattle_root,
     'A.1': cattle_root + ['T1338A'],
     'A.1.1': cattle_root + ['T1338A', 'T300G', 'G684A'],
-    'A.1.2': cattle_root + ['T1338A', 'A487G', 'G488C', 'G1299A'],
+    'A.1.2': cattle_root + ['T1338A', 'G1299A'],
     'A.1.3': cattle_root + ['T1338A', 'T1732C'],
     'A.1.4': cattle_root + ['T1338A', 'G921A', 'G1374A'],
     'A.1.5': cattle_root + ['T1338A', 'G1071A'],
-    #'A.1.6': cattle_root + ['T1338A', 'A448G'] Omitted for now because of spurious detection in samples with low coverage at 448
+    'A.1.6': cattle_root + ['T1338A', 'A448G'],
+    'A.1.7': cattle_root + ['T1338A', 'C1031T', 'C1275T'],
+    'A.1.8': cattle_root + ['T1338A', 'A1560G'],
+    'A.1.8.1': cattle_root + ['T1338A', 'A1560G', 'G1011A'],
 } 
 
 template = barcodes[barcodes['Unnamed: 0'] == 'H5Nx-2.3.4.4b']
